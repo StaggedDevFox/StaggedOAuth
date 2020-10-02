@@ -25,11 +25,10 @@ public class UserAuthentication {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
-// sample test authenticated api
-//    @GetMapping("/hello")
-//    public String helloWorld() {
-//        return "hello World!!";
-//    }
+    @GetMapping("/hello")
+    public String helloWorld() {
+        return "hello World!!";
+    }
 
     @RequestMapping(value="/authenticate", method = RequestMethod.POST)
     public ResponseEntity createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
