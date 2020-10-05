@@ -1,0 +1,16 @@
+jwt:
+  secret: stagged
+
+amazonProperties:
+  endpointUrl: https://s3.us-west-1.amazonaws.com
+  accessKey: AKIA6CAT6RQDY63EVYNE
+  secretKey: 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
+  bucketName: stagged-images
+
+amazonDynamo:
+  endpointUrl: https://dynamodb.us-west-1.amazonaws.com
+  accessKey: AKIA6CAT6RQDY63EVYNE
+  secretKey: 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
+  region: us-west-1
+
+
