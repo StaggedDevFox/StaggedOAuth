@@ -1,31 +1,16 @@
 package com.stagged.auth.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class AuthenticationRequest {
 
     private String userName;
     private String password;
-
-    public AuthenticationRequest(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-
-    public AuthenticationRequest() {
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

@@ -1,6 +1,6 @@
 package com.stagged.auth.controller;
 
-import com.stagged.auth.services.aws.AmazonClient;
+import com.stagged.auth.services.S3Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,16 +10,16 @@ import org.springframework.web.multipart.MultipartFile;
 public class BucketController {
 
 
-    private AmazonClient amazonClient;
+    private S3Operation s3Operation;
 
     @Autowired
-    BucketController(AmazonClient amazonClient) {
-        this.amazonClient = amazonClient;
+    BucketController(S3Operation s3Operation) {
+        this.s3Operation = s3Operation;
     }
 
     @PostMapping("/uploadFile")
     public String uploadFile (@RequestPart(value = "file") MultipartFile file) {
-        return this.amazonClient.uploadFile(file);
+        return this.s3Operation.uploadFile(file);
     }
 
 }

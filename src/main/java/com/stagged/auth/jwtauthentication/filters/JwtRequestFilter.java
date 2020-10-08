@@ -1,4 +1,4 @@
-package com.stagged.auth.filters;
+package com.stagged.auth.jwtauthentication.filters;
 
 import com.stagged.auth.jwtauthentication.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;

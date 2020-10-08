@@ -1,7 +1,7 @@
-package com.stagged.auth.security;
+package com.stagged.auth.config;
 
 
-import com.stagged.auth.filters.JwtRequestFilter;
+import com.stagged.auth.jwtauthentication.filters.JwtRequestFilter;
 import com.stagged.auth.services.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

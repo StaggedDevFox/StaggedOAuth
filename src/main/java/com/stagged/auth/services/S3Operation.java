@@ -1,4 +1,4 @@
-package com.stagged.auth.services.aws;
+package com.stagged.auth.services;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -27,11 +27,9 @@ import java.io.IOException;
 import java.util.Date;
 
 @Service
-public class AmazonClient {
-
+public class S3Operation {
 
     private AmazonS3 amazonS3Client;
-
 
     @Value("${amazonProperties.endpointUrl}")
     private String endpointUrl;
@@ -52,22 +50,10 @@ public class AmazonClient {
     private void initializeAmazon() {
         BasicAWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
         this.amazonS3Client = AmazonS3Client.builder().withRegion("us-west-1")
-                                                    .withCredentials(new AWSStaticCredentialsProvider(credentials))
-                                                    .build();
-
-    }
-
-    @PostConstruct
-    @Bean
-    public DynamoDBMapper mapper() {
-        AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
-                        dynamoEndPoint, "us-west-1"))
-                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey)))
+                .withCredentials(new AWSStaticCredentialsProvider(credentials))
                 .build();
-        return new DynamoDBMapper(client, DynamoDBMapperConfig.DEFAULT);
-    }
 
+    }
 
     private File convertMultiPartToFile(MultipartFile file) throws IOException {
         File convFile = new File(file.getOriginalFilename());

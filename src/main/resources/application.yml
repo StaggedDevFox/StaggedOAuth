@@ -2,15 +2,33 @@ jwt:
   secret: stagged
 
 amazonProperties:
-  endpointUrl: https://s3.us-west-1.amazonaws.com
-  accessKey: AKIA6CAT6RQDY63EVYNE
-  secretKey: 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
+  endpointUrl: url
+  accessKey: accessKey
+  secretKey: secretKey
   bucketName: stagged-images
 
 amazonDynamo:
-  endpointUrl: https://dynamodb.us-west-1.amazonaws.com
-  accessKey: AKIA6CAT6RQDY63EVYNE
-  secretKey: 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
+  endpointUrl: url
+  accessKey: accessKey
+  secretKey: secretKey
   region: us-west-1
 
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+zuul:
+  #Service will be mapped under the /api URI
+  #add the real service instead of test-service
+  prefix: /api
+  routes:
+    test-service:
+      path: /test-service/**
+      url: http://localhost:8001
 
