@@ -6,7 +6,7 @@ Dating Website which find matches in all the events happening near you.
 Implemented JWT based authentication in spring boot and integrated with Netflix Zuul (Gateway Service) 
 
 **Stagged Design** <br>
-![](images/stagged.png)
+![](images/stagged2.png)
 
 **Implementaiton** <br>
 
