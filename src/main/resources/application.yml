@@ -1,19 +1,6 @@
 jwt:
   secret: stagged
 
-amazonProperties:
-  endpointUrl: url
-  accessKey: accessKey
-  secretKey: secretKey
-  bucketName: stagged-images
-
-amazonDynamo:
-  endpointUrl: url
-  accessKey: accessKey
-  secretKey: secretKey
-  region: us-west-1
-
-
 eureka:
   client:
     registerWithEureka: true
