@@ -8,4 +8,9 @@ Implemented JWT based authentication in spring boot and integrated with Netflix 
 **Stagged Design** <br>
 ![](images/stagged.png)
 
+**Implementaiton** <br>
+
+1) This is a gateway service which checks for token everytime before proceeding the request for any microservice.
+2) We have used AWS Dynamo to store user and events information. Microservices will hit the redis cache for any query. If there is a miss, we will directly query the dynamo tables and add the details in redis. 
+
 
